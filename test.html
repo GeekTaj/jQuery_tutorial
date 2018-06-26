@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>click demo</title>
+  <style>
+<!--段落的属性，当鼠标经过时背景颜色变为黄色-->
+  p {
+    color: red;
+    margin: 5px;
+    cursor: pointer;
+  }
+  p:hover {
+    background: yellow;
+  }
+  </style>
+  <script src="jquery-3.3.1.js"></script>
+</head>
+<body>
+<input type="text">
+<p>click demo from shiyanlou for jquery -p1;</p>
+<p>click demo from shiyanlou for jquery -p2;</p>
+<p>click demo from shiyanlou for jquery -p3;</p>
+ 
+<script>
+<!--为所有的p标签的click事件绑定一个回调函数，当点击触发时会弹出一个警告窗口-->
+$( "p" ).click(function() {
+  alert("clicked!");
+});
+
+<!--分别为keydown和keyup事件绑定一个回调函数，观察按键按下以及放开时的弹窗-->
+$("input").keydown(function(){
+	alert("KEY DOWN!");
+});
+$("input").keyup(function(){
+	alert("KEY up!");
+});
+
+<!--为keypress事件绑定一个回调函数，传递一个参数，在控制台中打印这个参数观察它的属性-->
+$("input").keypress(function(e){
+	console.log(e);
+})
+</script>
+ 
+</body>
+</html> 
